@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering\small\setlength{\tabcolsep}{3pt}
+\caption{\textbf{Single-label accuracy (\%)}, GroupNorm ResNet-18, Dirichlet label skew, 3 seeds. On single-label tasks the output-space mechanisms cluster with FedAvg---\emph{except} that not-true masking (FedNTD) \emph{helps} under extreme few-class skew (C10-.1), the regime it was designed for (Sec.~\ref{sec:why}); on multi-label it instead collapses. Balancing (BalBCE) is not applicable: softmax classes are mutually exclusive, so there is no negative-weighting choice to make.}
+\label{tab:sl}
+\begin{tabular}{lcccc}
+\toprule
+Method & C10-.1 & C10-.5 & C100-.1 & C100-.5 \\
+\midrule
+FedAvg & 69.3\tiny$\pm$2.2 & 85.6\tiny$\pm$0.3 & 52.3\tiny$\pm$0.6 & 55.7\tiny$\pm$0.2 \\
+FedProx & 73.3\tiny$\pm$1.1 & 86.1\tiny$\pm$0.5 & 52.0\tiny$\pm$0.4 & 53.0\tiny$\pm$0.5 \\
+SCAFFOLD & 68.3\tiny$\pm$1.5 & 85.9\tiny$\pm$0.5 & 46.5\tiny$\pm$0.7 & 57.3\tiny$\pm$0.3 \\
+FedSAM & 67.3\tiny$\pm$2.8 & 84.9\tiny$\pm$1.0 & 51.8\tiny$\pm$0.5 & 56.0\tiny$\pm$0.7 \\
+FedNTD (masking) & 75.4\tiny$\pm$0.8 & 85.8\tiny$\pm$1.0 & 52.3\tiny$\pm$0.1 & 55.0\tiny$\pm$0.0 \\
+FedPrior (blend) & 68.9\tiny$\pm$1.8 & 85.5\tiny$\pm$0.7 & 51.1\tiny$\pm$0.1 & 55.8\tiny$\pm$0.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
